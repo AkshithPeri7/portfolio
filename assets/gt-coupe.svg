@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 440" role="img" aria-label="Illustrated performance coupe side profile">
+ <defs>
+  <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a5adb3"/><stop offset=".16" stop-color="#616e77"/><stop offset=".42" stop-color="#343f47"/><stop offset=".72" stop-color="#161d22"/><stop offset="1" stop-color="#05090c"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172a35"/><stop offset=".4" stop-color="#4d626b"/><stop offset=".65" stop-color="#17232b"/><stop offset="1" stop-color="#080f15"/></linearGradient>
+  <linearGradient id="trim" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#9daab0"/><stop offset=".3" stop-color="#d1d3d0"/><stop offset=".7" stop-color="#7b858d"/><stop offset="1" stop-color="#c8cbcc"/></linearGradient>
+  <radialGradient id="tire"><stop offset="0" stop-color="#10161a"/><stop offset=".56" stop-color="#151b1f"/><stop offset=".84" stop-color="#060b0e"/><stop offset="1" stop-color="#333a40"/></radialGradient>
+  <radialGradient id="rim"><stop stop-color="#a2aaa8"/><stop offset=".3" stop-color="#535e65"/><stop offset=".65" stop-color="#171f25"/><stop offset="1" stop-color="#879093"/></radialGradient>
+  <linearGradient id="highlight" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#edf1ed" stop-opacity="0"/><stop offset=".25" stop-color="#d7e1e1" stop-opacity=".85"/><stop offset=".65" stop-color="#737f84" stop-opacity=".38"/><stop offset="1" stop-color="#e9e9e6" stop-opacity="0"/></linearGradient>
+  <filter id="shadow"><feGaussianBlur stdDeviation="21"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+ </defs>
+ <style>
+   .wheel-rotor { animation: wheel-turn 2.9s linear infinite; transform-box:view-box; }
+   .wheel-rotor.rear { transform-origin:305px 286px; }
+   .wheel-rotor.front { transform-origin:759px 286px; }
+   @keyframes wheel-turn { to { transform:rotate(360deg); } }
+   @media (prefers-reduced-motion: reduce) { .wheel-rotor {animation:none;} }
+ </style>
+
+ <ellipse cx="525" cy="345" rx="410" ry="26" fill="#000" opacity=".65" filter="url(#shadow)"/>
+ <path d="M76 343H960" stroke="#f04b30" stroke-width="2" opacity=".6"/>
+ <!-- Rear diffuser and frontal splitter -->
+ <path d="M124 286L200 295L251 307L790 309L883 300L938 286L937 303L878 315L258 320L148 307Z" fill="#080e13"/>
+ <path d="M819 296L955 293L976 298L951 309L813 308Z" fill="#1b252b"/>
+ <!-- Wheels behind wheel arches -->
+ <g>
+   <circle cx="305" cy="286" r="81" fill="url(#tire)" stroke="#555f61" stroke-width="5"/>
+   <circle cx="305" cy="286" r="65" fill="#11191d" stroke="#3d484e" stroke-width="3"/>
+   <circle cx="305" cy="286" r="56" fill="url(#rim)" stroke="#808a8d" stroke-width="1.7"/>
+   <g class="wheel-rotor rear">
+   <g fill="#0d1519" stroke="#6d787d" stroke-width="1.2">
+    <path d="M301 285L276 231L293 230L314 271Z"/><path d="M305 283L360 259L361 278L319 295Z"/><path d="M308 288L331 342L313 345L298 302Z"/><path d="M300 287L254 320L251 300L288 282Z"/><path d="M303 279L285 238L309 235L314 278Z"/>
+   </g>
+   <circle cx="305" cy="286" r="16" fill="#404b50" stroke="#adb6b6" stroke-width="3"/><circle cx="305" cy="286" r="6" fill="#ed5337"/>
+   </g>
+   <circle cx="759" cy="286" r="81" fill="url(#tire)" stroke="#555f61" stroke-width="5"/>
+   <circle cx="759" cy="286" r="65" fill="#11191d" stroke="#3d484e" stroke-width="3"/>
+   <circle cx="759" cy="286" r="56" fill="url(#rim)" stroke="#808a8d" stroke-width="1.7"/>
+   <g class="wheel-rotor front">
+   <g fill="#0d1519" stroke="#6d787d" stroke-width="1.2">
+    <path d="M755 285L730 231L747 230L768 271Z"/><path d="M759 283L814 259L815 278L773 295Z"/><path d="M762 288L785 342L767 345L752 302Z"/><path d="M754 287L708 320L705 300L742 282Z"/><path d="M757 279L739 238L763 235L768 278Z"/>
+   </g>
+   <circle cx="759" cy="286" r="16" fill="#404b50" stroke="#adb6b6" stroke-width="3"/><circle cx="759" cy="286" r="6" fill="#ed5337"/>
+   </g>
+ </g>
+ <!-- body lower flank and sculpted sill -->
+ <path d="M124 240C145 218 209 201 263 191L390 168L424 126Q447 107 505 106L615 111Q651 113 679 141L742 186Q812 197 877 219L913 232Q936 244 943 265L944 286L844 297Q839 222 762 217Q679 214 673 297L384 296Q379 219 304 218Q229 218 225 292L144 283Q124 276 124 240Z" fill="url(#paint)" stroke="#839097" stroke-width="2"/>
+ <!-- upper surface lines -->
+ <path d="M172 228Q337 181 414 174L735 189Q836 210 907 236" stroke="url(#highlight)" stroke-width="4" fill="none" opacity=".85"/>
+ <path d="M389 169L423 128Q444 112 504 112L614 116Q647 116 676 145L728 185L386 178Z" fill="#090f14" stroke="#829199" stroke-width="2"/>
+ <path d="M407 169L444 133Q457 124 506 123L539 123L537 174Z" fill="url(#glass)"/>
+ <path d="M555 123L615 126Q638 127 655 146L695 179L558 175Z" fill="url(#glass)"/>
+ <path d="M545 120L549 177" stroke="#86959b" stroke-width="8"/>
+ <path d="M476 129Q494 126 515 130" stroke="#c2d4d6" stroke-width="2" opacity=".55"/>
+ <!-- mirror -->
+ <path d="M553 168L577 174L590 186L574 190L552 182Z" fill="#202a31" stroke="#a0aaac" stroke-width="2"/>
+ <!-- door, intake, contours -->
+ <path d="M548 181L540 259Q535 280 522 288" stroke="#859096" stroke-width="1.6" fill="none" opacity=".7"/>
+ <path d="M585 215L610 212" stroke="#b9c3c4" stroke-width="3" stroke-linecap="round"/>
+ <path d="M388 209L416 258L528 262L543 251" stroke="#afbbb9" stroke-width="2" opacity=".45" fill="none"/>
+ <path d="M404 262Q523 284 652 265L696 247" stroke="#070b0f" stroke-width="15" opacity=".8" fill="none"/>
+ <path d="M406 260Q533 275 650 257" stroke="#f04b30" stroke-width="3" fill="none" opacity=".95"/>
+ <path d="M650 198L700 209L686 230L637 220Z" fill="#10191f" stroke="#718088" stroke-width="1"/>
+ <path d="M146 244Q202 235 235 229" stroke="#f04b30" stroke-width="5" stroke-linecap="round"/>
+ <!-- rear lamp and front DRL -->
+ <path d="M132 235L167 221L184 221L169 232L134 245Z" fill="#e52f20"/>
+ <path d="M130 236L164 222" stroke="#ff6e43" stroke-width="9" filter="url(#glow)" opacity=".6"/>
+ <path d="M886 225L918 240L921 249L884 246L865 232Z" fill="#e9edeb"/>
+ <path d="M889 233L916 245" stroke="#fff5e6" stroke-width="7" filter="url(#glow)" opacity=".65"/>
+ <path d="M897 247L940 257" stroke="#f04b30" stroke-width="3"/>
+ <!-- spoiler -->
+ <path d="M149 208L235 191L249 191L242 199L156 218Z" fill="#161d22" stroke="#9ba6a8" stroke-width="2"/>
+ <path d="M200 203L207 213L222 211L222 198" fill="#192329" stroke="#718085" stroke-width="1"/>
+ <!-- wheel arch highlights -->
+ <path d="M221 286Q231 209 304 208Q378 210 388 292" stroke="#69767b" stroke-width="4" fill="none"/>
+ <path d="M672 290Q682 211 757 209Q829 209 843 294" stroke="#69767b" stroke-width="4" fill="none"/>
+ <!-- floor reflections -->
+ <path d="M207 325Q515 345 913 319" stroke="#ed4c32" stroke-width="1.2" opacity=".38" fill="none"/>
+</svg>

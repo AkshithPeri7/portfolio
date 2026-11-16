@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="description" content="Akshith Peri — Computer Science Engineering student and developer. Building full-stack systems, interactive 3D experiences, and AI-powered tools.">
+  <title>Akshith Peri | Built to Go Further</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    :root {
+      color-scheme:dark;
+      --bg: #090b0d; --bg-soft: #111418; --bg-card: #15191d;
+      --text: #f4f3ee; --muted: #a0a7ab; --line: #2e3438;
+      --hot: #f04b30; --hot-2: #ff7c53; --paper: #e8e8e1;
+      --font-display:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;
+      --font-body:'DM Sans',Arial,sans-serif;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:96px; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.6; min-width:320px; }
+    body::selection { background:var(--hot); color:#fff; }
+    ::selection { background:var(--hot); color:#fff; }
+    a { color:inherit; text-decoration:none; } button { font:inherit; }
+    .container { width:min(1200px, calc(100% - 56px)); margin-inline:auto; }
+    .hairline { border-top:1px solid var(--line); }
+    .nav { position:sticky; top:0; z-index:99; background:rgba(9,11,13,.92); border-bottom:1px solid #ffffff19; backdrop-filter:blur(20px); }
+    .nav-content { display:flex; align-items:center; justify-content:space-between; min-height:76px; gap:26px; }
+    .brand { display:flex; align-items:center; gap:13px; white-space:nowrap; }
+    .brand-symbol { width:40px; height:40px; border:2px solid var(--hot); display:grid; place-items:center; font:900 22px var(--font-display); transform:skewX(-9deg); }
+    .brand-name { font:800 22px var(--font-display); letter-spacing:.07em; line-height:.9; }
+    .brand-sub { display:block; margin-top:5px; color:var(--muted); font:600 10px var(--font-body); letter-spacing:.2em; }
+    .nav-links { display:flex; align-items:center; gap:29px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; }
+    .nav-links a { transition:color .2s; } .nav-links a:hover { color:var(--hot-2); }
+    .nav-cta { padding:10px 17px; border:1px solid var(--hot); color:var(--hot-2); white-space:nowrap; font-size:12px; letter-spacing:.1em; font-weight:700; text-transform:uppercase; }
+    .nav-cta:hover { background:var(--hot); color:white; }
+    .eyebrow { display:flex; align-items:center; gap:11px; color:var(--hot-2); text-transform:uppercase; font-size:11px; font-weight:700; letter-spacing:.24em; }
+    .eyebrow::before { content:''; display:block; width:30px; height:2px; background:var(--hot); }
+    .hero { min-height:740px; position:relative; overflow:hidden; background:radial-gradient(ellipse 60% 58% at 77% 53%,#23303a70,transparent 79%),linear-gradient(180deg,#101417,#07090b); }
+    .hero::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.29; background-image:linear-gradient(to right,#ffffff0a 1px,transparent 1px),linear-gradient(to bottom,#ffffff08 1px,transparent 1px); background-size:74px 74px; mask-image:linear-gradient(to right,transparent 10%,black 80%); }
+    .hero::after { content:''; position:absolute; left:-8%; bottom:0; right:-8%; height:1px; background:linear-gradient(90deg,transparent,var(--hot),transparent); }
+    .hero-layout { min-height:740px; display:grid; grid-template-columns: minmax(0,1.02fr) minmax(0,1fr); align-items:center; position:relative; z-index:1; padding:70px 0 100px; }
+    .hero-copy { position:relative; z-index:5; }
+    .status { display:inline-flex; align-items:center; gap:9px; margin-bottom:34px; padding:9px 12px; border:1px solid #ffffff24; background:#ffffff05; color:#c9ccca; font-size:10px; letter-spacing:.19em; font-weight:700; text-transform:uppercase; }
+    .status-dot { width:6px; height:6px; border-radius:50%; background:var(--hot); box-shadow:0 0 12px var(--hot); }
+    .hero h1 { font:900 clamp(80px,10vw,150px)/.77 var(--font-display); letter-spacing:-.025em; text-transform:uppercase; margin:0 0 29px; }
+    .hero h1 span { display:block; } .hero h1 .hot { color:var(--hot); font-style:italic; padding-right:.1em; }
+    .hero-intro { max-width:480px; font-size:16px; color:#bbc1c5; margin:0; line-height:1.9; }
+    .hero-intro strong { color:var(--text); font-weight:700; }
+    .actions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:30px; }
+    .btn { display:inline-flex; gap:14px; align-items:center; justify-content:center; padding:13px 20px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; border:1px solid #5a6063; transition:background .2s, transform .2s, border-color .2s; }
+    .btn:hover { transform:translateY(-3px); border-color:var(--hot-2); }
+    .btn-primary { color:#fff; border-color:var(--hot); background:var(--hot); }
+    .btn-primary:hover { background:#c73c27; }
+    .btn-outline { background:#0c0f12dd; }
+    .arrow { font-size:16px; line-height:1; }
+    .hero-visual { position:absolute; right:-100px; top:140px; width:min(850px,75vw); height:470px; z-index:2; pointer-events:none; }
+    .hero-visual::before { content:'01'; position:absolute; right:8%; top:-19%; font:900 320px/.8 var(--font-display); color:#ffffff05; }
+    .hero-visual::after { content:''; position:absolute; left:16%; right:7%; bottom:16px; height:80px; background:var(--hot); opacity:.12; filter:blur(65px); }
+    .car-stage { position:absolute; inset:0; animation:car-in 1.1s cubic-bezier(.2,.7,.2,1) both; }
+    .car-main { width:100%; position:absolute; top:18px; left:0; filter:drop-shadow(0 35px 50px #000a); animation:car-idle 4.8s ease-in-out 1.15s infinite; will-change:transform; }
+    .track-ellipse { position:absolute; width:70%; height:54%; left:17%; top:26%; border:1px solid #ffffff23; transform:skewY(-9deg) rotate(-9deg); border-radius:50%; }
+    .track-ellipse.inner { width:56%; height:41%; left:25%; top:32%; border-color:#f04b3033; }
+    .visual-top { position:absolute; top:22px; right:100px; color:#e5e8e3; font:600 13px var(--font-display); letter-spacing:.28em; }
+    .visual-bottom { position:absolute; bottom:47px; right:93px; display:flex; align-items:center; gap:10px; color:#c3c8c5; font:600 12px var(--font-display); letter-spacing:.18em; }
+    .visual-bottom b { color:var(--hot); font-size:25px; }
+    .hero-note { position:absolute; bottom:33px; left:0; display:flex; align-items:center; gap:15px; font:700 11px var(--font-body); letter-spacing:.17em; color:#9ba2a5; text-transform:uppercase; }
+    .hero-note .line { width:62px; height:1px; background:var(--hot); }
+    @keyframes car-in { from { opacity:0; transform:translateX(85px) translateY(18px) scale(.96); } to { opacity:1; transform:translate(0) scale(1); } }
+    .ticker { border-bottom:1px solid var(--line); background:#131719; padding:17px 0; }
+    .ticker-inner { display:flex; justify-content:space-between; gap:25px; flex-wrap:wrap; }
+    .stat { display:flex; align-items:baseline; gap:10px; }
+    .stat strong { font:800 32px var(--font-display); color:var(--hot); line-height:1; }
+    .stat span { font:700 10px var(--font-body); text-transform:uppercase; letter-spacing:.16em; color:#c2c7ca; }
+    .section { padding:110px 0; }
+    .section-num { color:var(--hot); font:700 12px var(--font-display); letter-spacing:.22em; text-transform:uppercase; }
+    .section-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin:17px 0 42px; }
+    .section-heading h2 { font:900 clamp(48px,6.1vw,85px)/.95 var(--font-display); text-transform:uppercase; letter-spacing:-.01em; margin:0; }
+    .section-heading h2 em { font-style:normal; color:var(--hot); }
+    .section-heading p { color:var(--muted); max-width:330px; margin:0 0 5px; font-size:14px; }
+    .about { display:grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap:80px; align-items:center; }
+    .about-quote { font:700 clamp(26px,3.1vw,43px)/1.18 var(--font-display); letter-spacing:.01em; text-transform:uppercase; margin:0 0 20px; }
+    .about-quote span { color:var(--hot); }
+    .body-copy { color:#adb3b6; font-size:15px; line-height:1.9; margin:0; }
+    .about-spec { border-left:1px solid var(--line); padding-left:31px; }
+    .spec-row { display:grid; grid-template-columns:116px 1fr; gap:20px; padding:15px 0; border-bottom:1px solid #ffffff12; font-size:14px; }
+    .spec-row span { color:#7d898e; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; }
+    .spec-row strong { font-weight:600; }
+    .featured { background:#101316; padding:105px 0; border-block:1px solid var(--line); }
+    .feature-grid { display:grid; grid-template-columns:1.05fr .95fr; border:1px solid #40484d; min-height:425px; overflow:hidden; }
+    .feature-art { min-height:450px; position:relative; background: radial-gradient(circle at 60% 45%,#3c454d,#131a1e 52%,#0d1114 78%); display:grid; place-items:center; overflow:hidden; }
+    .feature-art::before { content:'AUTO\A VERSE'; white-space:pre; position:absolute; left:31px; top:24px; color:#ffffff0b; font:900 130px/.7 var(--font-display); }
+    .feature-art::after { content:''; position:absolute; width:850px; height:340px; border:1px solid #ffffff20; border-radius:50%; transform:rotate(-15deg); }
+    .feature-art img { position:relative; width:112%; z-index:1; transform:translateX(12px); filter:drop-shadow(0 25px 30px #0008); }
+    .feature-art .flag { position:absolute; bottom:24px; left:29px; z-index:2; color:#d8dedd; font-size:10px; font-weight:800; letter-spacing:.2em; }
+    .feature-info { padding:49px 42px; display:flex; flex-direction:column; justify-content:center; }
+    .feature-info h3 { font:900 clamp(48px,5vw,74px)/.92 var(--font-display); margin:15px 0 22px; text-transform:uppercase; }
+    .feature-info h3 em { font-style:normal; color:var(--hot); }
+    .feature-info p { color:var(--muted); font-size:14px; line-height:1.9; max-width:420px; margin:0; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin:20px 0 25px; }
+    .tag { font-size:10px; font-weight:700; letter-spacing:.07em; border:1px solid #465055; padding:6px 9px; text-transform:uppercase; color:#c9cccb; }
+    .text-link { font-size:12px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--hot-2); align-self:flex-start; }
+    .text-link:hover { text-decoration:underline; text-underline-offset:5px; }
+    .projects-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+    .project-card { min-height:346px; display:flex; flex-direction:column; padding:28px; border:1px solid var(--line); background:linear-gradient(145deg,#171c20,#111519); transition:transform .22s,border-color .22s,background .22s; }
+    .project-card.affordiq { border-color:#724036; background:linear-gradient(145deg,#211c1b,#111519 78%); }
+    .project-card.affordiq h3 { color:#fff7f1; }
+    .project-card:hover { transform:translateY(-7px); border-color:#a44d3d; background:linear-gradient(145deg,#1c2327,#111519); }
+    .card-top { display:flex; justify-content:space-between; align-items:center; padding-bottom:20px; border-bottom:1px solid #ffffff19; }
+    .card-number { font:700 12px var(--font-display); letter-spacing:.23em; color:var(--hot); }
+    .card-category { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#8b969a; }
+    .project-card h3 { font:800 30px var(--font-display); text-transform:uppercase; margin:24px 0 12px; line-height:1.08; }
+    .project-card p { color:var(--muted); font-size:13px; line-height:1.8; margin:0; flex:1; }
+    .project-card .tags { margin:17px 0; }
+    .project-card .tag { font-size:9px; padding:5px 7px; }
+    .skills { background:linear-gradient(180deg,#121619,#0a0d0f); border-block:1px solid var(--line); }
+    .skill-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+    .skill-box { padding:28px 30px; border:1px solid var(--line); background:#111519a6; }
+    .skill-box .skill-title { display:flex; justify-content:space-between; gap:15px; align-items:baseline; margin-bottom:23px; }
+    .skill-box h3 { font:700 25px var(--font-display); margin:0; text-transform:uppercase; }
+    .skill-box small { color:var(--hot); font:700 12px var(--font-display); }
+    .pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .pill { border:1px solid #3e464a; color:#c7cdce; padding:8px 11px; font-size:12px; }
+    .journey-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; }
+    .journey-panel { padding:30px; background:#12171a; border:1px solid var(--line); }
+    .journey-panel h3 { font:800 26px var(--font-display); text-transform:uppercase; margin:0 0 23px; }
+    .timeline-item { position:relative; border-left:1px solid #4e5559; padding:0 0 26px 24px; }
+    .timeline-item::before { content:''; position:absolute; top:5px; left:-5px; width:8px; height:8px; background:var(--hot); }
+    .timeline-item:last-child { padding-bottom:0; }
+    .timeline-item span { display:block; color:var(--hot-2); font:700 11px var(--font-body); letter-spacing:.15em; text-transform:uppercase; }
+    .timeline-item strong { display:block; font:700 20px var(--font-display); line-height:1.2; text-transform:uppercase; margin:6px 0; }
+    .timeline-item p { margin:0; color:var(--muted); font-size:13px; line-height:1.75; }
+    .cert-list { display:grid; grid-template-columns:1fr 1fr; gap:10px 25px; list-style:none; padding:0; margin:0; }
+    .cert-list li { display:flex; align-items:flex-start; gap:9px; font-size:13px; color:#afb6b9; border-bottom:1px solid #ffffff0e; padding-bottom:12px; }
+    .cert-list li::before { content:'↗'; color:var(--hot); font-weight:800; }
+    .research-card { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:30px; border:1px solid #7e4239; background:linear-gradient(110deg,#261c1c,#111719); padding:36px; }
+    .research-card h3 { margin:11px 0; font:800 36px var(--font-display); text-transform:uppercase; }
+    .research-card p { margin:0; color:#b3babb; font-size:13px; }
+    .contact { padding:105px 0 95px; text-align:center; background:radial-gradient(ellipse 50% 85% at 50% 100%,#63291f4b,transparent 85%),#0d1012; border-top:1px solid var(--line); }
+    .contact .eyebrow { justify-content:center; }
+    .contact h2 { font:900 clamp(65px,11vw,140px)/.9 var(--font-display); text-transform:uppercase; margin:23px 0 24px; }
+    .contact h2 em { color:var(--hot); font-style:normal; }
+    .contact p { max-width:540px; margin:0 auto; color:var(--muted); font-size:15px; }
+    .contact .actions { justify-content:center; margin-top:33px; }
+    footer { padding:25px 0; border-top:1px solid var(--line); color:#879297; background:#0b0e10; font-size:11px; text-transform:uppercase; letter-spacing:.1em; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    footer a:hover { color:var(--hot); }
+    .js .reveal { opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.22,.75,.21,1),transform .7s cubic-bezier(.22,.75,.21,1); transition-delay:var(--reveal-delay,0ms); }
+    .js .reveal.visible { opacity:1; transform:none; }
+    .project-card.reveal.visible:hover { transform:translateY(-8px); }
+    .skill-box.reveal.visible:hover { transform:translateY(-4px); }
+    :focus-visible { outline:2px solid var(--hot-2); outline-offset:4px; }
+    @media(max-width:1100px) {
+      .hero-visual { right:-170px; top:160px; width:740px; opacity:.7; }
+      .hero-copy { max-width:590px; } .hero-layout { grid-template-columns:1fr; }
+      .projects-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .nav-links { gap:17px; }
+      .feature-info { padding:35px; }
+    }
+    @media(max-width:760px) {
+      .container { width:min(100% - 34px,650px); }
+      .nav-content { flex-wrap:wrap; min-height:70px; padding:15px 0 11px; }
+      .nav-links { width:100%; order:3; overflow:auto; justify-content:space-between; padding-top:4px; gap:15px; font-size:10px; }
+      .nav-cta { margin-left:auto; font-size:10px; padding:8px 10px; }
+      .hero,.hero-layout { min-height:740px; }
+      .hero-layout { padding-top:75px; padding-bottom:310px; align-items:start; }
+      .hero h1 { font-size:clamp(72px,14vw,105px); }
+      .hero-visual { top:auto; bottom:20px; width:min(780px,130vw); right:-130px; height:310px; opacity:1; }
+      .hero-visual .car-main { top:5px; }
+      .visual-top { display:none; } .visual-bottom { bottom:0; right:120px; }
+      .hero-note { display:none; }
+      .hero-intro { font-size:14px; }
+      .ticker-inner { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+      .section { padding:77px 0; }
+      .section-heading { align-items:start; flex-direction:column; gap:16px; }
+      .about,.feature-grid,.journey-grid,.skill-grid { grid-template-columns:1fr; }
+      .about { gap:24px; }
+      .about-spec { border-left:0; padding-left:0; }
+      .feature-art { min-height:320px; }
+      .feature-info { padding:34px; }
+      .cert-list { grid-template-columns:1fr; }
+      .research-card { padding:25px; }
+    }
+    @media(max-width:520px) {
+      .brand-sub { display:none; }
+      .hero,.hero-layout { min-height:725px; }
+      .hero-layout { padding-top:67px; padding-bottom:260px; }
+      .hero h1 { font-size:clamp(72px,16vw,94px); }
+      .hero-visual { right:-150px; bottom:0; width:135vw; }
+      .hero-intro { max-width:400px; }
+      .projects-grid { grid-template-columns:1fr; }
+      .project-card { min-height:300px; }
+      .feature-art { min-height:275px; }
+      .feature-info { padding:27px; }
+      .section-heading h2 { font-size:54px; }
+      .stat strong { font-size:28px; }
+      .stat span { font-size:9px; }
+      .btn { font-size:11px; padding:12px 15px; }
+      .nav-links { gap:10px; }
+      .nav-links a { white-space:nowrap; }
+      .contact h2 { font-size:76px; }
+      .spec-row { grid-template-columns:90px 1fr; }
+    }
+
+    /* Motion design: pit-lane arrival, aerodynamic light trails and race telemetry. */
+    .nav { isolation:isolate; }
+    .scroll-progress { position:absolute; left:0; right:0; bottom:0; height:2px; overflow:hidden; pointer-events:none; }
+    .scroll-progress span { display:block; width:100%; height:100%; background:linear-gradient(90deg,#fbac81,var(--hot),#c52024); transform:scaleX(0); transform-origin:left center; will-change:transform; box-shadow:0 0 15px #f04b3077; }
+    .brand-symbol { transition:box-shadow .3s ease,transform .3s ease; }
+    .brand:hover .brand-symbol { transform:skewX(-9deg) translateY(-2px); box-shadow:5px 5px 0 #f04b3040; }
+    .nav-links a { position:relative; }
+    .nav-links a::after { content:''; position:absolute; left:0; bottom:-7px; width:100%; height:2px; background:var(--hot); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
+    .nav-links a:hover::after,.nav-links a.is-active::after { transform:scaleX(1); }
+    .nav-links a.is-active { color:var(--hot-2); }
+    .hero { isolation:isolate; }
+    .hero::before { animation:grid-drift 22s linear infinite; }
+    .hero::after { height:2px; animation:starting-line 2s ease-out both; }
+    .hero-copy .status { animation:pit-entrance .65s .12s both; }
+    .hero-copy .eyebrow { animation:pit-entrance .65s .25s both; }
+    .hero h1 span:first-child { animation:headline-entrance .9s .35s both; }
+    .hero h1 span.hot { animation:headline-entrance .9s .48s both; }
+    .hero-intro { animation:pit-entrance .8s .7s both; }
+    .hero-copy .actions { animation:pit-entrance .8s .82s both; }
+    .hero-note .line { transform-origin:left; animation:line-length 1.5s 1.1s both; }
+    .status-dot { animation:status-pulse 2s ease-in-out infinite; }
+    .hero-visual { isolation:isolate; }
+    .track-ellipse { animation:orbit 26s linear infinite; }
+    .track-ellipse.inner { animation:orbit-reverse 22s linear infinite; }
+    .hero-visual::after { animation:underglow 4.6s ease-in-out infinite; }
+    .speed-lanes { position:absolute; inset:80px -2% 0 -15%; overflow:hidden; z-index:-1; transform:skewY(-9deg); }
+    .speed-lanes i { position:absolute; left:0; width:46%; height:2px; background:linear-gradient(90deg,transparent,#ff553961,transparent); border-radius:100px; opacity:0; animation:lane-rush 3.1s linear infinite; }
+    .speed-lanes i:nth-child(1){top:24%;animation-delay:0s;width:38%;}
+    .speed-lanes i:nth-child(2){top:36%;animation-delay:-2.1s;width:57%;}
+    .speed-lanes i:nth-child(3){top:57%;animation-delay:-1.3s;width:32%;}
+    .speed-lanes i:nth-child(4){top:68%;animation-delay:-2.6s;width:50%;}
+    .speed-lanes i:nth-child(5){top:80%;animation-delay:-.7s;width:39%;}
+    .car-stage { z-index:2; }
+    .telemetry { position:absolute; z-index:4; top:77%; left:7%; display:flex; flex-direction:column; gap:7px; width:172px; padding:13px 14px; color:#d8dfe0; border:1px solid #ffffff26; background:#0a0d10bd; backdrop-filter:blur(8px); animation:pit-entrance 1s 1s both; box-shadow:0 15px 30px #0003; }
+    .telemetry-label { font:600 9px var(--font-body); color:#a4adb0; letter-spacing:.17em; }
+    .telemetry-value { display:flex; align-items:center; gap:7px; font:800 13px var(--font-display); letter-spacing:.08em; white-space:nowrap; }
+    .telemetry-value i { width:6px; height:6px; border-radius:50%; background:#5af8b1; box-shadow:0 0 10px #5af8b188; animation:status-pulse 2.2s infinite; }
+    .telemetry-value b { color:var(--hot-2); }
+    .telemetry-track { width:100%; height:3px; background:#ffffff24; overflow:hidden; }
+    .telemetry-track span { display:block; width:38%; height:100%; background:var(--hot); animation:telemetry-scan 2.7s ease-in-out infinite; }
+    .stat strong { display:inline-block; font-variant-numeric:tabular-nums; }
+    .project-card { position:relative; overflow:hidden; isolation:isolate; }
+    .project-card::before { content:''; position:absolute; inset:0; background:linear-gradient(110deg,transparent 15%,#ffffff0b 45%,transparent 65%); transform:translateX(-125%); transition:transform .8s ease; pointer-events:none; }
+    .project-card:hover::before,.project-card:focus-within::before { transform:translateX(125%); }
+    .project-card:hover .card-number { text-shadow:0 0 14px #f04b3088; }
+    .project-card .text-link { transition:letter-spacing .25s ease,color .25s ease; }
+    .project-card:hover .text-link { letter-spacing:.13em; }
+    .skill-box { transition:border-color .3s,transform .3s,box-shadow .3s; }
+    .skill-box:hover { border-color:#be513f; box-shadow:0 10px 28px #0003; }
+    .pill { transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease; }
+    .pill:hover { color:#fff; border-color:var(--hot); background:#f04b301c; transform:translateY(-2px); }
+    .feature-art img { transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .8s ease; }
+    .feature-grid:hover .feature-art img { transform:translateX(18px) scale(1.055); filter:drop-shadow(0 32px 38px #000b); }
+    .feature-art::after { animation:orbit 30s linear infinite; }
+    .feature-grid { transition:border-color .35s,box-shadow .35s; }
+    .feature-grid:hover { border-color:#b45143; box-shadow:0 0 0 1px #f04b3029,0 18px 50px #0004; }
+    .timeline-item::before { box-shadow:0 0 0 5px #f04b3017; transition:box-shadow .3s,transform .3s; }
+    .timeline-item:hover::before { box-shadow:0 0 0 9px #f04b3027; transform:scale(1.2); }
+    .btn { position:relative; overflow:hidden; }
+    .btn::after { content:''; position:absolute; inset:0; background:linear-gradient(110deg,transparent 28%,#ffffff36 48%,transparent 65%); transform:translateX(-130%); transition:transform .55s ease; pointer-events:none; }
+    .btn:hover::after { transform:translateX(130%); }
+    @keyframes grid-drift { to {background-position:74px 0,0 74px;} }
+    @keyframes starting-line { from {transform:scaleX(0);opacity:0;} to {transform:scaleX(1);opacity:1;} }
+    @keyframes pit-entrance { from {opacity:0;transform:translateY(16px);} to {opacity:1;transform:translateY(0);} }
+    @keyframes headline-entrance { from {opacity:0;transform:translateX(-38px) skewX(-5deg);} to {opacity:1;transform:translateX(0) skewX(0);} }
+    @keyframes line-length { from {transform:scaleX(0)} to {transform:scaleX(1)} }
+    @keyframes status-pulse { 0%,100% {opacity:1;} 50% {opacity:.42;} }
+    @keyframes orbit { to {transform:skewY(-9deg) rotate(351deg);} }
+    @keyframes orbit-reverse { to {transform:skewY(-9deg) rotate(-369deg);} }
+    @keyframes car-idle { 0%,100% {transform:translateY(0);} 50% {transform:translateY(-9px);} }
+    @keyframes underglow { 0%,100% {opacity:.08;filter:blur(65px);} 50% {opacity:.19;filter:blur(58px);} }
+    @keyframes lane-rush { 0% {opacity:0;transform:translateX(-70%);} 16% {opacity:.8;} 85% {opacity:.5;} 100% {opacity:0;transform:translateX(290%);} }
+    @keyframes telemetry-scan { 0%,100% {transform:translateX(0);} 50% {transform:translateX(163%);} }
+    @media (max-width:1100px){ .telemetry{left:17%;top:75%;} }
+    @media (max-width:760px){
+      .hero-visual { overflow:visible; }
+      .telemetry { left:17%;top:70%;width:150px;padding:9px 11px; }
+      .telemetry-value { font-size:11px; }
+      .speed-lanes {inset:40px -2% 0 -15%;}
+    }
+    @media (max-width:520px){
+      .telemetry { left:16%; top:62%; transform:scale(.86); transform-origin:left top; }
+      .hero-visual::before { font-size:230px; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *,*::before,*::after { scroll-behavior:auto!important;animation:none!important;transition:none!important; }
+      .js .reveal,.js .reveal.visible { opacity:1!important;transform:none!important; }
+      .car-stage,.car-main,.hero h1 span,.hero-copy .status,.hero-copy .eyebrow,.hero-intro,.hero-copy .actions,.telemetry { opacity:1!important;transform:none!important; }
+      .speed-lanes { display:none; }
+      .telemetry-track span { width:80%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-content">
+      <a class="brand" href="#top" aria-label="Akshith Peri home"><span class="brand-symbol">AP</span><span><span class="brand-name">AKSHITH PERI</span><span class="brand-sub">DESIGN // CODE // BUILD</span></span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#journey">Journey</a></nav>
+      <a class="nav-cta" href="#contact">Get in touch ↗</a>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="status"><span class="status-dot" aria-hidden="true"></span> Computer Science Student // Bengaluru</div>
+          <div class="eyebrow">The developer behind the build</div>
+          <h1 id="hero-title"><span>BUILT TO</span><span class="hot">GO FURTHER.</span></h1>
+          <p class="hero-intro">Hey, I'm <strong>Akshith Peri.</strong> I build practical full-stack applications, immersive 3D experiences, AI-powered tools, and cybersecurity projects. Driven by curiosity. Focused on execution.</p>
+          <div class="actions"><a class="btn btn-primary" href="#projects">View projects <span class="arrow">↗</span></a><a class="btn btn-outline" href="https://github.com/AkshithPeri7" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow">↗</span></a></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="speed-lanes"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="track-ellipse"></div><div class="track-ellipse inner"></div>
+          <span class="visual-top">DESIGNED FOR THE NEXT LAP</span>
+          <div class="car-stage"><img class="car-main" src="assets/gt-coupe.svg" alt=""></div>
+          <div class="telemetry"><span class="telemetry-label">SYSTEM STATUS</span><span class="telemetry-value"><i></i>ENGINEER MODE <b>ON</b></span><span class="telemetry-track"><span></span></span></div>
+          <span class="visual-bottom"><b>///</b> PERFORMANCE THROUGH CODE</span>
+        </div>
+        <div class="hero-note"><span class="line"></span> Scroll to explore // 2026</div>
+      </div>
+    </section>
+    <div class="ticker" aria-label="Portfolio quick facts"><div class="container ticker-inner"><div class="stat"><strong>07</strong><span>Completed projects</span></div><div class="stat"><strong>03</strong><span>Hackathon builds</span></div><div class="stat"><strong>01</strong><span>Published paper</span></div><div class="stat"><strong>2028</strong><span>Graduation target</span></div></div></div>
+    <section class="section" id="about" aria-labelledby="about-title"><div class="container"><div class="section-num">01 / Driver profile</div><div class="section-heading"><h2 id="about-title">THE PERSON<br>BEHIND <em>THE CODE.</em></h2><p>Developer mindset. Automotive design inspiration. Real-world projects.</p></div><div class="about"><div class="reveal"><p class="about-quote">I LIKE BUILDING THINGS THAT <span>ACTUALLY WORK.</span></p><p class="body-copy">I'm pursuing a B.E. in Computer Science & Engineering at AMC Engineering College, Bengaluru (VTU). My work ranges from a 3D automotive showroom to secure digital evidence systems, fintech apps, financial decision agents, and AI tools. I'm currently seeking opportunities to learn, collaborate, and contribute to real software products.</p></div><div class="about-spec reveal"><div class="spec-row"><span>Location</span><strong>Bengaluru, India</strong></div><div class="spec-row"><span>Education</span><strong>B.E. Computer Science & Engineering</strong></div><div class="spec-row"><span>College</span><strong>AMC Engineering College · VTU</strong></div><div class="spec-row"><span>CGPA</span><strong>8.0 / 10 (up to Semester 4, per resume)</strong></div><div class="spec-row"><span>Interests</span><strong>Web development · AI · Cybersecurity · 3D interfaces</strong></div></div></div></div></section>
+    <section class="featured" id="projects" aria-labelledby="projects-title"><div class="container"><div class="section-num">02 / Spotlight build</div><div class="section-heading"><h2 id="projects-title">ENGINEERED<br>WITH <em>INTENT.</em></h2><p>Leading the grid: an automotive experience built for exploration.</p></div><article class="feature-grid reveal"><div class="feature-art"><img src="assets/gt-coupe.svg" alt="Stylized sports car representing the AutoVerse 3D showroom project" loading="lazy"><span class="flag">FEATURED / 01 — AUTOMOTIVE</span></div><div class="feature-info"><div class="eyebrow">Featured project / 3D experience</div><h3>AUTO<em>VERSE.</em></h3><p>An interactive 3D car showroom with 360° vehicle inspection, paint and wheel customization, explorable interiors, realistic engine sounds, side-by-side model comparisons, and an AI buying advisor.</p><div class="tags"><span class="tag">TypeScript</span><span class="tag">Three.js</span><span class="tag">Web Audio API</span><span class="tag">3D UI</span></div><a class="text-link" href="https://github.com/AkshithPeri7/AutoVerse-The-CarApp" target="_blank" rel="noopener noreferrer">Explore AutoVerse on GitHub ↗</a></div></article></div></section>
+    <section class="section" aria-labelledby="other-projects-title"><div class="container"><div class="section-num">03 / More from the garage</div><div class="section-heading"><h2 id="other-projects-title">PROJECT <em>LINEUP.</em></h2><p>Full-stack, cybersecurity, financial decision systems, AI, and research — every project built to solve a real problem.</p></div><div class="projects-grid">
+      <article class="project-card reveal"><div class="card-top"><span class="card-number">P / 02</span><span class="card-category">Fintech · Full Stack</span></div><h3>NexaBank</h3><p>Banking app with customer and staff portals, JWT authentication, loan and KYC workflows, audit logs, and spending analytics.</p><div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MySQL</span></div><a class="text-link" href="https://github.com/AkshithPeri7/nexabank" target="_blank" rel="noopener noreferrer">View code ↗</a></article>
+      <article class="project-card reveal"><div class="card-top"><span class="card-number">P / 03</span><span class="card-category">Cybersecurity · Hackathon</span></div><h3>CaseVault</h3><p>Digital evidence chain-of-custody system with SHA-256 fingerprinting, cryptographic signing, role-based access, and tamper detection.</p><div class="tags"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">Ed25519</span></div><a class="text-link" href="https://github.com/AkshithPeri7/CaseVault" target="_blank" rel="noopener noreferrer">View code ↗</a></article>
+      <article class="project-card reveal"><div class="card-top"><span class="card-number">P / 04</span><span class="card-category">AI · Hackathon</span></div><h3>PlagiaScan</h3><p>Plagiarism detection platform combining web-based code discovery, similarity checks, optional AI-powered review, and a developer dashboard.</p><div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Claude AI</span></div><a class="text-link" href="https://github.com/AkshithPeri7/PlagiaScan" target="_blank" rel="noopener noreferrer">View code ↗</a></article>
+      <article class="project-card affordiq reveal"><div class="card-top"><span class="card-number">P / 05</span><span class="card-category">Fintech · Hackathon</span></div><h3>AffordIQ</h3><p>Financial decision agent built for HackerRank Orchestrate (Sept 2026). Simulates 90-day cash flow, compares full, partial and installment payment plans, and checks that essential expenses and minimum balances stay protected.</p><div class="tags"><span class="tag">Python</span><span class="tag">Cash-flow simulation</span><span class="tag">Rule-based engine</span></div><a class="text-link" href="https://github.com/AkshithPeri7/hackerrank-orchestrate-september26" target="_blank" rel="noopener noreferrer">Explore AffordIQ ↗</a></article>
+      <article class="project-card reveal"><div class="card-top"><span class="card-number">P / 06</span><span class="card-category">Desktop · Data</span></div><h3>Blood Bank Management</h3><p>Desktop app for donor records, blood group inventory, request tracking, and searchable blood availability.</p><div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">MySQL</span></div><a class="text-link" href="https://github.com/AkshithPeri7/Blood-Bank-Management-" target="_blank" rel="noopener noreferrer">View code ↗</a></article>
+      <article class="project-card reveal"><div class="card-top"><span class="card-number">P / 07</span><span class="card-category">Research · Automation</span></div><h3>Math Telegram Bot</h3><p>Telegram bot that responds to mathematical queries in real time, supported by a published research paper on its implementation.</p><div class="tags"><span class="tag">Python</span><span class="tag">Telegram API</span><span class="tag">Research</span></div><a class="text-link" href="https://www.jetir.org/view?paper=JETIR2507096" target="_blank" rel="noopener noreferrer">Read research ↗</a></article>
+    </div></div></section>
+    <section class="section skills" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-num">04 / Technical specs</div><div class="section-heading"><h2 id="skills-title">UNDER THE <em>HOOD.</em></h2><p>Technologies and concepts used across my projects and coursework.</p></div><div class="skill-grid">
+      <div class="skill-box reveal"><div class="skill-title"><h3>Languages</h3><small>01 / 04</small></div><div class="pills"><span class="pill">Python</span><span class="pill">C</span><span class="pill">C++</span><span class="pill">Java</span><span class="pill">JavaScript</span></div></div>
+      <div class="skill-box reveal"><div class="skill-title"><h3>Web & Backend</h3><small>02 / 04</small></div><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Node.js</span><span class="pill">Express.js</span><span class="pill">Flask</span><span class="pill">Django</span><span class="pill">PHP</span></div></div>
+      <div class="skill-box reveal"><div class="skill-title"><h3>Data & Integrations</h3><small>03 / 04</small></div><div class="pills"><span class="pill">MySQL</span><span class="pill">SQLite</span><span class="pill">MongoDB</span><span class="pill">Claude AI</span><span class="pill">Telegram Bot API</span><span class="pill">Google Custom Search API</span></div></div>
+      <div class="skill-box reveal"><div class="skill-title"><h3>Security & Tools</h3><small>04 / 04</small></div><div class="pills"><span class="pill">JWT</span><span class="pill">bcrypt</span><span class="pill">SHA-256</span><span class="pill">Ed25519</span><span class="pill">Git / GitHub</span><span class="pill">VS Code</span><span class="pill">Linux</span></div></div>
+    </div></div></section>
+    <section class="section" id="journey" aria-labelledby="journey-title"><div class="container"><div class="section-num">05 / Road map</div><div class="section-heading"><h2 id="journey-title">THE JOURNEY <em>SO FAR.</em></h2><p>Education, hackathons, research, learning, and milestones.</p></div><div class="journey-grid"><div class="journey-panel reveal"><h3>Education & milestones</h3><div class="timeline-item"><span>2024 — 2028</span><strong>B.E. Computer Science & Engineering</strong><p>AMC Engineering College, Bengaluru · VTU · CGPA 8.0/10 (up to Semester 4, per resume)</p></div><div class="timeline-item"><span>2025</span><strong>Published research</strong><p>Math Telegram Bot Using Python — JETIR, July 2025.</p></div><div class="timeline-item"><span>Hackathons · Including September 2026</span><strong>HIRE-4-THON · Cybersecurity · HackerRank Orchestrate</strong><p>Built PlagiaScan, CaseVault and AffordIQ, with AffordIQ focused on safe financial payment planning and 90-day cash-flow analysis.</p></div><div class="timeline-item"><span>Beyond the classroom</span><strong>Community & workshops</strong><p>IIIT Bangalore AI workshop, AWS Build Centre event, college coding club, and volunteering.</p></div></div><div class="journey-panel reveal"><h3>Certifications</h3><ul class="cert-list"><li>Google — Crash Course on Python</li><li>Java Programming for Beginners — Udemy</li><li>Data Science for Professionals — Coursera</li><li>CompTIA Cloud+: Cloud Capacity Planning</li><li>UI/UX for Chatbot & Voice Interface AIs</li><li>Introduction to Azure Fundamentals — Microsoft Learn</li><li>Celonis Process Mining Foundations</li></ul></div></div></div></section>
+    <section class="section" aria-labelledby="research-title"><div class="container"><div class="research-card reveal"><div><div class="eyebrow">Research publication / 2025</div><h3 id="research-title">Math Telegram Bot Using Python</h3><p>JETIR · July 2025 · Volume 12, Issue 7 · Paper ID JETIR2507096</p></div><a class="btn btn-primary" href="https://www.jetir.org/view?paper=JETIR2507096" target="_blank" rel="noopener noreferrer">Read the paper ↗</a></div></div></section>
+    <section id="contact" class="contact" aria-labelledby="contact-title"><div class="container reveal"><div class="eyebrow">06 / Next destination</div><h2 id="contact-title">YOUR MOVE.<br><em>LET'S BUILD.</em></h2><p>Open to software engineering internships, collaborations, and interesting ideas worth putting into motion.</p><div class="actions"><a class="btn btn-primary" href="mailto:akshithperi@gmail.com">Send an email ↗</a><a class="btn btn-outline" href="https://www.linkedin.com/in/akshith-peri-6bb8aa380" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn btn-outline" href="https://github.com/AkshithPeri7" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></section>
+  </main>
+  <footer><div class="container footer-inner"><span>© <span id="year">2026</span> Akshith Peri · Engineered with curiosity.</span><a href="#top">Back to the starting line ↑</a></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const extendedReveals = document.querySelectorAll('.section-num, .section-heading, .feature-info, .research-card, .contact .eyebrow');
+    extendedReveals.forEach(el => el.classList.add('reveal'));
+    const revealItems = document.querySelectorAll('.reveal');
+    document.querySelectorAll('.projects-grid, .skill-grid').forEach(grid => {
+      grid.querySelectorAll('.reveal').forEach((item, i) => {
+        item.style.setProperty('--reveal-delay', `${(i % 3) * 105}ms`);
+      });
+    });
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.06, rootMargin:'0px 0px 32px 0px' });
+      revealItems.forEach(el => observer.observe(el));
+    } else {
+      revealItems.forEach(el => el.classList.add('visible'));
+    }
+
+    // Scroll-position indicator: requestAnimationFrame keeps updates lightweight.
+    const progressFill = document.getElementById('scroll-progress-fill');
+    let progressPending = false;
+    function updateProgress(){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = max > 0 ? Math.min(1,Math.max(0,window.scrollY / max)) : 0;
+      progressFill.style.transform = `scaleX(${percent})`;
+      progressPending = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!progressPending) { progressPending=true; requestAnimationFrame(updateProgress); }
+    }, {passive:true});
+    window.addEventListener('resize', updateProgress, {passive:true});
+    updateProgress();
+
+    // Highlight the section currently in view.
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    if ('IntersectionObserver' in window) {
+      const activeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
+          }
+        });
+      }, { rootMargin:'-24% 0px -58% 0px', threshold:0 });
+      document.querySelectorAll('#about,#projects,#skills,#journey').forEach(el => activeObserver.observe(el));
+    }
+
+    // Count up the three project milestones when they enter the viewport.
+    // Graduation year stays static: it is a date, not a count.
+    const stats = document.querySelectorAll('.ticker .stat strong');
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      const statObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const target = entry.target;
+          const value = Number(target.textContent);
+          const digits = target.textContent.length;
+          if (!Number.isFinite(value) || value > 99) {statObserver.unobserve(target);return;}
+          const duration=1050;
+          const start=performance.now();
+          function tick(now) {
+            const elapsed=Math.min(1,(now-start)/duration);
+            const eased=1-Math.pow(1-elapsed,3);
+            target.textContent = String(Math.round(value*eased)).padStart(digits,'0');
+            if (elapsed < 1) requestAnimationFrame(tick);
+            else target.textContent=String(value).padStart(digits,'0');
+          }
+          requestAnimationFrame(tick);
+          statObserver.unobserve(target);
+        });
+      }, {threshold:.5});
+      stats.forEach((stat,i) => {if(i<3) statObserver.observe(stat)});
+    }
+  </script>
+</body>
+</html>
