@@ -9,13 +9,19 @@ A responsive, car-inspired portfolio website showcasing Akshith Peri's full-stac
 - Car-inspired sections: Driver Profile, Spotlight Build, Project Lineup, Under the Hood, and Road Map
 - Responsive desktop and mobile layouts, automotive animations, scroll reveals, a page progress bar, animated telemetry, and accessible reduced-motion support
 - **AutoVerse** interactive car showroom as the featured project
-- **AffordIQ** — HackerRank Orchestrate (September 2026) financial decision agent, featured in the project lineup alongside 6 other completed projects
+- **AffordIQ** — HackerRank Orchestrate (September 2026) financial decision agent, featured in the project lineup alongside 7 other completed projects
 
 ## Featured hackathon project: AffordIQ
 
 AffordIQ was built for the **HackerRank Orchestrate — September 2026** hackathon. It uses a deterministic Python engine to reconstruct financial events, simulate a 90-day cash-flow horizon, evaluate payment strategies and validate that essential expenses are covered and minimum balances are maintained. It also includes a separate optional interactive web demo.
 
 Source: [AkshithPeri7/hackerrank-orchestrate-september26](https://github.com/AkshithPeri7/hackerrank-orchestrate-september26).
+
+## QuantWeave project
+
+Added **QuantWeave** to the live project lineup: a full-stack financial intelligence platform featuring equity analytics, portfolio ledgers, mutual fund research, algorithmic backtesting, market insights, and a deterministic AI copilot.
+
+Source: [AkshithPeri7/QuantWeave](https://github.com/AkshithPeri7/QuantWeave).
 
 ## Preview locally
 
