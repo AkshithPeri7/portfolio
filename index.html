@@ -457,10 +457,10 @@
     }
 
   
-    /* Skyline hero framing: crop toward the car and center it in the visual stage. */
+    /* Skyline hero: keep the complete video frame visible at normal desktop zoom. */
     .hero-visual {
-      right:-24px; top:50%;
-      width:min(860px,69vw); height:480px;
+      right:-12px; top:50%;
+      width:min(860px,68vw); height:484px;
       transform:translateY(-50%);
       overflow:hidden; border-radius:3px;
     }
@@ -472,23 +472,25 @@
       position:absolute; inset:0;
       display:block; width:100%; height:100%;
       max-width:none; max-height:none;
-      object-fit:cover;
-      object-position:76% 72%;
-      transform:scale(1.08);
+      object-fit:contain;
+      object-position:center center;
+      transform:none;
       transform-origin:center center;
-      filter:brightness(.94) contrast(1.04) saturate(1.04);
+      filter:brightness(.96) contrast(1.04) saturate(1.04);
       animation:none;
     }
     .hero-visual::before { z-index:1; pointer-events:none; }
     .hero-visual::after { z-index:2; pointer-events:none; }
     .visual-top,.visual-bottom,.telemetry { z-index:3; }
+    /* Move the status panel slightly lower without letting it touch the frame edge. */
+    .telemetry { top:82%; left:7%; }
     @media(max-width:1100px) {
       .hero-visual {
-        right:-20px; top:52%;
+        right:-12px; top:52%;
         width:68vw; height:430px;
         transform:translateY(-50%);
       }
-      video.car-main { object-position:76% 72%; }
+      .telemetry { top:80%; }
     }
     @media(max-width:760px) {
       .hero-visual {
@@ -497,13 +499,15 @@
         transform:none; border-radius:0;
       }
       video.car-main {
-        object-fit:cover; object-position:76% 72%;
-        transform:scale(1.06);
+        object-fit:contain; object-position:center center;
+        transform:none;
       }
+      .telemetry { top:auto; bottom:12px; left:16px; }
     }
     @media(max-width:520px) {
       .hero-visual { height:270px; max-height:none; }
-      video.car-main { object-position:75% 72%; }
+      video.car-main { object-position:center center; }
+      .telemetry { bottom:10px; left:12px; }
     }
 
   </style>
