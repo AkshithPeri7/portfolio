@@ -550,10 +550,11 @@
       object-position:center center;
     }
     .telemetry {
-      top:auto;
-      bottom:2.5%;
+      top:auto !important;
+      bottom:0 !important;
       left:6%;
       width:clamp(150px,14vw,190px);
+      transform:translateY(0) !important;
     }
     .visual-top { top:4%; right:4%; }
     .visual-bottom { bottom:4%; right:4%; }
@@ -580,14 +581,14 @@
       .hero-copy { width:100%; }
       .hero h1 { font-size:clamp(64px,11vw,94px); }
       .hero-visual { width:100%; max-height:none; aspect-ratio:16/9; }
-      .telemetry { bottom:2.5%; left:5%; top:auto; }
+       .telemetry { top:auto !important; bottom:0 !important; left:5%; transform:translateY(0) !important; }
       .hero-note { display:none; }
     }
     @media (max-width: 520px) {
       .hero-layout { padding-top:42px; gap:22px; }
       .hero h1 { font-size:clamp(56px,12vw,76px); }
       .hero-visual { aspect-ratio:16/10; }
-      .telemetry { bottom:2.5%; width:145px; padding:10px 11px; }
+       .telemetry { top:auto !important; bottom:0 !important; width:145px; padding:10px 11px; transform:translateY(0) !important; }
       .visual-bottom { display:none; }
     }
 
