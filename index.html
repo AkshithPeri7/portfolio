@@ -592,6 +592,63 @@
       .visual-bottom { display:none; }
     }
 
+  
+    /* Put Engineer Mode in its own row beneath the Skyline image, never over it. */
+    .hero-media-column {
+      grid-column:2;
+      grid-row:1;
+      display:flex;
+      flex-direction:column;
+      align-self:center;
+      align-items:flex-start;
+      gap:12px;
+      width:100%;
+      min-width:0;
+    }
+    .hero-media-column .hero-visual {
+      position:relative;
+      inset:auto;
+      top:auto;
+      right:auto;
+      bottom:auto;
+      left:auto;
+      transform:none;
+      width:100%;
+      height:auto;
+      aspect-ratio:16 / 9;
+      max-height:520px;
+      overflow:hidden;
+    }
+    .hero-media-column .telemetry {
+      position:relative !important;
+      inset:auto !important;
+      top:auto !important;
+      right:auto !important;
+      bottom:auto !important;
+      left:auto !important;
+      transform:none !important;
+      align-self:flex-start;
+      margin:0;
+      width:clamp(172px,18vw,210px);
+      animation:pit-entrance 1s .2s both;
+    }
+    @media(max-width:1100px) {
+      .hero-media-column { grid-column:2; grid-row:1; width:100%; }
+      .hero-media-column .hero-visual {
+        position:relative; inset:auto; width:100%; height:auto;
+        aspect-ratio:16/9; max-height:520px; transform:none;
+      }
+    }
+    @media(max-width:820px) {
+      .hero-media-column { width:100%; }
+      .hero-media-column .hero-visual { width:100%; aspect-ratio:16/9; max-height:none; }
+      .hero-media-column .telemetry { width:172px; }
+    }
+    @media(max-width:520px) {
+      .hero-media-column .hero-visual { aspect-ratio:16/10; }
+      .hero-media-column .telemetry { width:145px; padding:10px 11px; }
+    }
+
   </style>
 </head>
 <body>
@@ -613,13 +670,15 @@
           <p class="hero-intro">Hey, I'm <strong>Akshith Peri.</strong> I build practical full-stack applications, immersive 3D experiences, AI-powered tools, and cybersecurity projects. Driven by curiosity. Focused on execution.</p>
           <div class="actions"><a class="btn btn-primary" href="#projects">View projects <span class="arrow">↗</span></a><a class="btn btn-outline" href="https://github.com/AkshithPeri7" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow">↗</span></a></div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="speed-lanes"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="track-ellipse"></div><div class="track-ellipse inner"></div>
-          <span class="visual-top">DESIGNED FOR THE NEXT LAP</span>
-          <div class="car-stage"><video class="car-main" src="/public/skyline%20gtr.mp4" autoplay muted loop playsinline preload="auto" aria-label="Nissan Skyline GT-R automotive hero video"></video></div>
+        <div class="hero-media-column">
+          <div class="hero-visual" aria-hidden="true">
+            <div class="speed-lanes"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="track-ellipse"></div><div class="track-ellipse inner"></div>
+            <span class="visual-top">DESIGNED FOR THE NEXT LAP</span>
+            <div class="car-stage"><video class="car-main" src="/public/skyline%20gtr.mp4" autoplay muted loop playsinline preload="auto" aria-label="Nissan Skyline GT-R automotive hero video"></video></div>
+            <span class="visual-bottom"><b>///</b> PERFORMANCE THROUGH CODE</span>
+          </div>
           <div class="telemetry"><span class="telemetry-label">SYSTEM STATUS</span><span class="telemetry-value"><i></i>ENGINEER MODE <b>ON</b></span><span class="telemetry-track"><span></span></span></div>
-          <span class="visual-bottom"><b>///</b> PERFORMANCE THROUGH CODE</span>
         </div>
         <div class="hero-note"><span class="line"></span> Scroll to explore // 2026</div>
       </div>
